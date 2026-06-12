@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salud del Servicio — Coiled Tubing · Well Construction</title>
+<style>
+  :root{
+    --navy:#15324d; --navy2:#1e4263; --blue:#2e6da4; --sky:#eaf1f7;
+    --ink:#1c2430; --soft:#5a6b7c; --faint:#8b99a8;
+    --line:#d8e1ea; --bg:#f7f9fb; --card:#ffffff;
+    --verde:#2e8b57; --verde-bg:#e7f4ec;
+    --amarillo:#b07d1e; --amarillo-bg:#fdf3dd;
+    --rojo:#b3402f; --rojo-bg:#fbe9e6;
+    --gris:#7c8a96; --gris-bg:#eef1f4;
+    --sh:0 1px 3px #0f1c2a14, 0 10px 24px -18px #0f1c2a33;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Arial, Helvetica, sans-serif; background:var(--bg); color:var(--ink); line-height:1.5; font-size:14px}
+  .page{max-width:960px; margin:0 auto; padding:36px 28px 60px}
+
+  /* HEADER */
+  .head{background:var(--navy); color:#fff; border-radius:12px; padding:26px 30px; display:flex;
+    justify-content:space-between; align-items:flex-start; gap:20px; box-shadow:var(--sh)}
+  .head .l .pre{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#9fc2dd; margin-bottom:8px}
+  .head h1{font-size:26px; font-weight:bold; letter-spacing:-0.3px}
+  .head .seg{font-size:13px; color:#c6d8e6; margin-top:4px}
+  .head .r{text-align:right; flex-shrink:0}
+  .score{font-size:38px; font-weight:bold; line-height:1}
+  .score small{font-size:13px; font-weight:normal; color:#9fc2dd; display:block; margin-top:4px}
+
+  /* SEMAFORO STRIP */
+  .strip{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:18px 0 0}
+  .pill{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px;
+    display:flex; align-items:center; gap:12px; box-shadow:var(--sh)}
+  .pill .dot{width:14px; height:14px; border-radius:50%; flex-shrink:0}
+  .pill .n{font-size:22px; font-weight:bold}
+  .pill .t{font-size:11px; color:var(--soft); text-transform:uppercase; letter-spacing:.5px}
+  @media(max-width:640px){.strip{grid-template-columns:repeat(2,1fr)}}
+
+  /* SECTIONS */
+  h2{font-size:15px; color:var(--navy); text-transform:uppercase; letter-spacing:1.2px;
+    margin:34px 0 4px; padding-bottom:8px; border-bottom:2px solid var(--navy); display:flex; align-items:center; gap:10px}
+  h2 .num{background:var(--navy); color:#fff; font-size:11px; width:22px; height:22px; border-radius:50%;
+    display:inline-flex; align-items:center; justify-content:center; flex-shrink:0}
+  .secnote{font-size:12.5px; color:var(--soft); margin-bottom:14px}
+
+  /* INSIGHTS */
+  .insights{display:flex; flex-direction:column; gap:10px; margin-top:12px}
+  .ins{background:var(--card); border:1px solid var(--line); border-left:5px solid var(--c); border-radius:10px;
+    padding:14px 18px; box-shadow:var(--sh)}
+  .ins .tag{font-size:10.5px; font-weight:bold; letter-spacing:1px; text-transform:uppercase; color:var(--c); margin-bottom:4px}
+  .ins p{font-size:13.5px}
+  .ins p b{color:var(--navy)}
+
+  /* TABLE */
+  table{width:100%; border-collapse:collapse; background:var(--card); border-radius:10px; overflow:hidden;
+    box-shadow:var(--sh); margin-top:12px; font-size:12.5px}
+  th{background:var(--navy); color:#fff; text-align:left; padding:10px 12px; font-size:11px;
+    letter-spacing:.5px; text-transform:uppercase; font-weight:bold}
+  td{padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ink)}
+  tr:last-child td{border-bottom:none}
+  td .src{display:block; font-size:11px; color:var(--faint); margin-top:2px}
+  .sem{display:inline-flex; align-items:center; gap:6px; font-weight:bold; font-size:11.5px;
+    padding:3px 10px; border-radius:20px; white-space:nowrap}
+  .sem i{width:8px; height:8px; border-radius:50%; display:inline-block}
+  .s-v{background:var(--verde-bg); color:var(--verde)} .s-v i{background:var(--verde)}
+  .s-a{background:var(--amarillo-bg); color:var(--amarillo)} .s-a i{background:var(--amarillo)}
+  .dec{color:var(--blue); font-weight:bold}
+
+  /* ACTIONS */
+  .acts{display:flex; flex-direction:column; gap:10px; margin-top:12px}
+  .act{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 18px;
+    display:grid; grid-template-columns:auto 1fr auto; gap:14px; align-items:center; box-shadow:var(--sh)}
+  .act .pr{width:26px; height:26px; border-radius:50%; background:var(--amarillo-bg); color:var(--amarillo);
+    font-weight:bold; font-size:13px; display:flex; align-items:center; justify-content:center; flex-shrink:0}
+  .act .what{font-size:13.5px}
+  .act .what b{color:var(--navy)}
+  .act .who{font-size:11.5px; color:var(--soft); text-align:right; white-space:nowrap}
+  @media(max-width:600px){.act{grid-template-columns:auto 1fr} .act .who{grid-column:2; text-align:left}}
+
+  /* FOOTER */
+  .foot{margin-top:36px; padding-top:16px; border-top:1px solid var(--line); display:flex;
+    justify-content:space-between; font-size:11px; color:var(--faint); flex-wrap:wrap; gap:8px}
+  .legend{display:flex; gap:14px; flex-wrap:wrap}
+  .legend span{display:inline-flex; align-items:center; gap:6px}
+  .legend i{width:9px; height:9px; border-radius:50%; display:inline-block}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="head">
+    <div class="l">
+      <div class="pre">Salud del Servicio · Well Construction · Categoría OFS E-30</div>
+      <h1>Coiled Tubing</h1>
+      <div class="seg">Segmento: CTU 2 3/8" &nbsp;·&nbsp; Responsable de seguimiento: Diego Guiñazu &nbsp;·&nbsp; Corte: Junio 2026</div>
+    </div>
+    <div class="r">
+      <div class="score">67%<small>decidible (4 de 6 ítems en verde)</small></div>
+    </div>
+  </div>
+
+  <!-- SEMAFORO STRIP -->
+  <div class="strip">
+    <div class="pill"><span class="dot" style="background:var(--verde)"></span><div><div class="n">4</div><div class="t">Verde</div></div></div>
+    <div class="pill"><span class="dot" style="background:var(--amarillo)"></span><div><div class="n">2</div><div class="t">Amarillo</div></div></div>
+    <div class="pill"><span class="dot" style="background:var(--rojo)"></span><div><div class="n">0</div><div class="t">Rojo</div></div></div>
+    <div class="pill"><span class="dot" style="background:var(--gris)"></span><div><div class="n">0</div><div class="t">Gris</div></div></div>
+  </div>
+
+  <!-- 1. LECTURA EJECUTIVA -->
+  <h2><span class="num">1</span>Lectura ejecutiva</h2>
+  <div class="secnote">Qué dice la Salud de este servicio, en tres ideas.</div>
+  <div class="insights">
+    <div class="ins" style="--c:var(--verde)">
+      <div class="tag">Listo para avanzar</div>
+      <p>El núcleo interno está sano: <b>contrato, performance, share y costo ticket tipo</b> disponibles, con dueño y fuente identificados. <b>El TCO de Coiled Tubing se puede construir ya</b>, sin esperar nuevos relevamientos.</p>
+    </div>
+    <div class="ins" style="--c:var(--amarillo)">
+      <div class="tag">Brecha — visión de mercado</div>
+      <p>Los dos amarillos son los mismos: <b>concentración de proveedores y oferta/demanda</b>. La fuente ya está identificada e institucionalizada (<b>Tablero de Planificación</b>), pero el dato sigue <b>parcial</b>: la brecha ya no es de fuente, es de <b>completitud</b>.</p>
+    </div>
+    <div class="ins" style="--c:var(--rojo)">
+      <div class="tag">Alerta de mercado</div>
+      <p>La demanda sube a <b>4 CTU (vs. 3 planificados)</b> mientras <b>Geopatagonia no cumple los requisitos de longitud de YPF</b> para los próximos pozos (asume tubería de 5.000). Menos oferta calificada + más demanda = <b>riesgo de concentración y de tarifa</b> en el próximo ciclo de contratación.</p>
+    </div>
+  </div>
+
+  <!-- 2. DETALLE DEL RELEVAMIENTO -->
+  <h2><span class="num">2</span>Detalle del relevamiento</h2>
+  <div class="secnote">Los 6 ítems relevados. Cada dato existe porque habilita una decisión.</div>
+  <table>
+    <tr><th style="width:24%">Información</th><th style="width:30%">Decisión que habilita</th><th style="width:22%">Dueño · Fuente</th><th style="width:12%">Estado</th><th style="width:12%">Semáforo</th></tr>
+    <tr>
+      <td><b>Cobertura contractual</b><span class="src">Tipo: Contrato · Frecuencia: Diaria</span></td>
+      <td class="dec">Ampliaciones de contrato</td>
+      <td>Compras / Contratos<span class="src">SAP Hana · BI Contratos</span></td>
+      <td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td>
+    </tr>
+    <tr>
+      <td><b>Performance Y-Well</b><span class="src">Tipo: KPI</span></td>
+      <td class="dec">Construcción de TCO</td>
+      <td>Operaciones<span class="src">Y-Well</span></td>
+      <td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td>
+    </tr>
+    <tr>
+      <td><b>Market share</b><span class="src">Tipo: Dato</span></td>
+      <td class="dec">Asignación al proveedor con mejor TCO</td>
+      <td>Operaciones<span class="src">Programador</span></td>
+      <td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td>
+    </tr>
+    <tr>
+      <td><b>Costo ticket tipo</b><span class="src">Tipo: Dato</span></td>
+      <td class="dec">Crear TCO</td>
+      <td>Compras / Contratos<span class="src">TER y WO</span></td>
+      <td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td>
+    </tr>
+    <tr>
+      <td><b>Concentración de mercado de proveedores</b><span class="src">Tipo: KPI</span></td>
+      <td class="dec">Romper oligopolio / adjudicar más contratos</td>
+      <td>Planif. Estratégica · Category Manager<span class="src">Tablero Planificación</span></td>
+      <td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td>
+    </tr>
+    <tr>
+      <td><b>Oferta y demanda del servicio</b><span class="src">Tipo: Dato</span></td>
+      <td class="dec">Necesidad de contratación de nuevos equipos</td>
+      <td>Planif. Estratégica · Category Manager<span class="src">Tablero Planificación</span></td>
+      <td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td>
+    </tr>
+  </table>
+
+  <!-- 3. PROXIMAS ACCIONES -->
+  <h2><span class="num">3</span>Próximas acciones</h2>
+  <div class="secnote">Cada amarillo tiene una acción para pasar a verde. Cada verde, una decisión que ya se puede tomar.</div>
+  <div class="acts">
+    <div class="act">
+      <div class="pr">1</div>
+      <div class="what"><b>Completar el dato de mercado:</b> acordar con Planificación Estratégica qué falta en el Tablero de Planificación (concentración y oferta/demanda) para pasar de Parcial a Disponible, y con qué frecuencia se actualiza.</div>
+      <div class="who">Planif. Estratégica<br>· Category Manager</div>
+    </div>
+    <div class="act">
+      <div class="pr">2</div>
+      <div class="what"><b>Validar la brecha de oferta:</b> confirmar el requisito de longitud frente a Geopatagonia y cuantificar el impacto de pasar de 3 a 4 CTU en la próxima contratación.</div>
+      <div class="who">Category Manager<br>· Operaciones</div>
+    </div>
+    <div class="act">
+      <div class="pr" style="background:var(--verde-bg); color:var(--verde)">✓</div>
+      <div class="what"><b>Iniciar el TCO de Coiled Tubing:</b> los cuatro insumos están en verde (contrato, performance, share, costo). Es el candidato natural a piloto del modelo.</div>
+      <div class="who">Diego Guiñazu</div>
+    </div>
+  </div>
+
+  <!-- FOOT -->
+  <div class="foot">
+    <div class="legend">
+      <span><i style="background:var(--verde)"></i>Verde: decidible</span>
+      <span><i style="background:var(--amarillo)"></i>Amarillo: gestionable con reservas</span>
+      <span><i style="background:var(--rojo)"></i>Rojo: no decidible</span>
+      <span><i style="background:var(--gris)"></i>Gris: no relevado</span>
+    </div>
+    <div>Fuente: Plantilla de Relevamiento de Salud WC · Una ficha por servicio, mismo formato</div>
+  </div>
+
+</div>
+</body>
+</html>
