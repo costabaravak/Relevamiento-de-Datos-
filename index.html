@@ -1,208 +1,209 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salud del Servicio — Coiled Tubing · Well Construction</title>
-<style>
-  :root{
-    --navy:#15324d; --navy2:#1e4263; --blue:#2e6da4; --sky:#eaf1f7;
-    --ink:#1c2430; --soft:#5a6b7c; --faint:#8b99a8;
-    --line:#d8e1ea; --bg:#f7f9fb; --card:#ffffff;
-    --verde:#2e8b57; --verde-bg:#e7f4ec;
-    --amarillo:#b07d1e; --amarillo-bg:#fdf3dd;
-    --rojo:#b3402f; --rojo-bg:#fbe9e6;
-    --gris:#7c8a96; --gris-bg:#eef1f4;
-    --sh:0 1px 3px #0f1c2a14, 0 10px 24px -18px #0f1c2a33;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:Arial, Helvetica, sans-serif; background:var(--bg); color:var(--ink); line-height:1.5; font-size:14px}
-  .page{max-width:960px; margin:0 auto; padding:36px 28px 60px}
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salud de Servicios — Well Construction</title><style>
+:root{--navy:#15324d;--navy2:#1e4263;--blue:#2e6da4;--ink:#1c2430;--soft:#5a6b7c;--faint:#8b99a8;--line:#d8e1ea;--bg:#f7f9fb;--card:#fff;--verde:#2e8b57;--amarillo:#b07d1e;--rojo:#b3402f;--gris:#7c8a96;--verde-bg:#e7f4ec;--amarillo-bg:#fdf3dd;--rojo-bg:#fbe9e6;--gris-bg:#eef1f4;--sh:0 1px 3px #0f1c2a14,0 10px 24px -18px #0f1c2a33;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;font-size:14px}
+.shell{display:grid;grid-template-columns:248px 1fr;max-width:1180px;margin:0 auto;min-height:100vh}
+.side{background:var(--navy);color:#fff;padding:22px 16px;position:sticky;top:0;height:100vh;overflow-y:auto}
+.brand{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#9fc2dd;margin-bottom:4px}
+.brand b{display:block;color:#fff;font-size:16px;letter-spacing:0;margin-top:4px}
+.nav{display:flex;flex-direction:column;gap:3px;margin-top:18px}
+.nav-item{display:flex;align-items:center;gap:9px;background:none;border:none;color:#cfdeeb;text-align:left;padding:9px 11px;border-radius:8px;font-size:13px;cursor:pointer;font-family:inherit;width:100%}
+.nav-item:hover{background:#1e4263}
+.nav-item.active{background:#2e6da4;color:#fff;font-weight:bold}
+.nv-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.nv-sc{margin-left:auto;font-size:11.5px;font-weight:bold}
+.main{padding:32px 34px 70px;min-width:0}
+.hero{background:var(--navy);color:#fff;border-radius:12px;padding:26px 30px;box-shadow:var(--sh)}
+.hero .pre{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#9fc2dd;margin-bottom:10px}
+.hero h1{font-size:25px;margin-bottom:14px}
+.hero .stats{display:flex;gap:28px;flex-wrap:wrap}
+.hero .nq{font-size:28px;font-weight:bold;line-height:1} .hero .lb{font-size:10.5px;color:#9fc2dd;text-transform:uppercase;margin-top:4px}
+h2.sec{font-size:14px;color:var(--navy);text-transform:uppercase;letter-spacing:1.2px;margin:30px 0 13px;padding-bottom:8px;border-bottom:2px solid var(--navy)}
+.ranking{display:flex;flex-direction:column;gap:8px}
+.rk{display:grid;grid-template-columns:1fr 1.6fr auto;gap:16px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;box-shadow:var(--sh);cursor:pointer;font-family:inherit;text-align:left;color:var(--ink);transition:.15s;width:100%}
+.rk:hover{border-color:var(--blue);transform:translateX(3px)}
+.rk-name{font-weight:bold;font-size:13.5px} .rk-cat{display:block;font-size:10.5px;color:var(--faint);font-weight:normal;margin-top:2px}
+.rk-bar{display:flex;height:13px;border-radius:7px;overflow:hidden;background:var(--gris-bg)}
+.rk-score{font-size:18px;font-weight:bold;text-align:right;min-width:50px}
+.insights{display:flex;flex-direction:column;gap:10px}
+.ins{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--c);border-radius:10px;padding:14px 18px;box-shadow:var(--sh)}
+.ins .tag{font-size:10.5px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;color:var(--c);margin-bottom:4px}
+.ins p{font-size:13px} .ins p b{color:var(--navy)}
+.flag{background:#fff8ec;border:1px solid #e8cf9a;border-radius:10px;padding:14px 18px;font-size:12.5px;color:#7a5a1e} .flag b{color:#5e4413}
+.fhead{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;background:var(--navy);color:#fff;border-radius:11px 11px 0 0;padding:18px 22px}
+.fpre{font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#9fc2dd;margin-bottom:5px}
+.fhead h2{font-size:21px} .fresp{font-size:12px;color:#c6d8e6;margin-top:3px}
+.fscore{font-size:30px;font-weight:bold;line-height:1;text-align:right;white-space:nowrap} .fscore small{display:block;font-size:10.5px;color:#9fc2dd;font-weight:normal;margin-top:3px}
+.mstrip{display:flex;gap:18px;background:#11283d;padding:10px 22px;flex-wrap:wrap}
+.mp{font-size:12px;color:#dce8f1;display:inline-flex;align-items:center;gap:7px} .mp i{width:10px;height:10px;border-radius:50%}
+.lectura{background:var(--card);border:1px solid var(--line);border-top:none;padding:14px 22px;font-size:13.5px}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-top:none;font-size:12.5px}
+th{background:var(--navy2);color:#fff;text-align:left;padding:9px 12px;font-size:10.5px;letter-spacing:.5px;text-transform:uppercase}
+td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top} tr:last-child td{border-bottom:none}
+td .src{display:block;font-size:10.5px;color:var(--faint);margin-top:2px}
+.dec{color:var(--blue);font-weight:bold}
+.sem{display:inline-flex;align-items:center;gap:6px;font-weight:bold;font-size:11px;padding:3px 9px;border-radius:20px;white-space:nowrap}
+.sem i{width:8px;height:8px;border-radius:50%}
+.s-v{background:var(--verde-bg);color:var(--verde)} .s-v i{background:var(--verde)}
+.s-a{background:var(--amarillo-bg);color:var(--amarillo)} .s-a i{background:var(--amarillo)}
+.s-r{background:var(--rojo-bg);color:var(--rojo)} .s-r i{background:var(--rojo)}
+.obs{background:#fff8ec;border:1px solid #e8cf9a;border-top:none;padding:12px 22px;font-size:12.5px;color:#7a5a1e}
+.obs-k{display:block;font-size:10px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;color:#a8801f;margin-bottom:4px}
+.pnav{display:flex;justify-content:space-between;gap:10px;margin-top:16px}
+.pn{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 16px;font-size:12.5px;color:var(--blue);cursor:pointer;font-family:inherit;font-weight:bold}
+.pn:hover{border-color:var(--blue)}
+.foot{margin-top:30px;padding-top:16px;border-top:1px solid var(--line);font-size:11px;color:var(--faint)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:6px} .legend span{display:inline-flex;align-items:center;gap:6px} .legend i{width:9px;height:9px;border-radius:50%}
+.mtog{display:none}
+@media(max-width:820px){
+ .shell{grid-template-columns:1fr}
+ .side{position:static;height:auto;border-radius:0}
+ .nav{display:none} .nav.open{display:flex}
+ .mtog{display:block;background:#1e4263;border:none;color:#fff;width:100%;padding:10px;border-radius:8px;margin-top:14px;font-family:inherit;font-size:13px;cursor:pointer}
+ .main{padding:22px 18px 60px}
+}
+</style></head><body>
+<div class="shell">
+ <aside class="side">
+   <div class="brand">Well Construction · Supply Chain<b>Salud de Servicios</b></div>
+   <button class="mtog" onclick="document.getElementById('nav').classList.toggle('open')">☰ Menú de servicios</button>
+   <nav class="nav" id="nav"><button class="nav-item active" data-t="overview" onclick="show('overview')"><span class="nv-dot" style="background:#9fc2dd"></span>Panorama</button><button class="nav-item" data-t="svc-coiled-tubing" onclick="show('svc-coiled-tubing')"><span class="nv-dot" style="background:var(--amarillo)"></span>Coiled Tubing<span class="nv-sc" style="color:var(--amarillo)">67%</span></button><button class="nav-item" data-t="svc-stack" onclick="show('svc-stack')"><span class="nv-dot" style="background:var(--rojo)"></span>Stack<span class="nv-sc" style="color:var(--rojo)">33%</span></button><button class="nav-item" data-t="svc-snubbing" onclick="show('svc-snubbing')"><span class="nv-dot" style="background:var(--amarillo)"></span>Snubbing<span class="nv-sc" style="color:var(--amarillo)">67%</span></button><button class="nav-item" data-t="svc-direccional" onclick="show('svc-direccional')"><span class="nv-dot" style="background:var(--rojo)"></span>Direccional<span class="nv-sc" style="color:var(--rojo)">29%</span></button><button class="nav-item" data-t="svc-fractura" onclick="show('svc-fractura')"><span class="nv-dot" style="background:var(--amarillo)"></span>Fractura<span class="nv-sc" style="color:var(--amarillo)">50%</span></button><button class="nav-item" data-t="svc-cementacion" onclick="show('svc-cementacion')"><span class="nv-dot" style="background:var(--verde)"></span>Cementación<span class="nv-sc" style="color:var(--verde)">100%</span></button><button class="nav-item" data-t="svc-fluidos" onclick="show('svc-fluidos')"><span class="nv-dot" style="background:var(--amarillo)"></span>Fluidos<span class="nv-sc" style="color:var(--amarillo)">50%</span></button><button class="nav-item" data-t="svc-rigs" onclick="show('svc-rigs')"><span class="nv-dot" style="background:var(--verde)"></span>Rigs<span class="nv-sc" style="color:var(--verde)">100%</span></button><button class="nav-item" data-t="svc-wireline" onclick="show('svc-wireline')"><span class="nv-dot" style="background:var(--rojo)"></span>Wireline<span class="nv-sc" style="color:var(--rojo)">29%</span></button></nav>
+ </aside>
+ <main class="main">
 
-  /* HEADER */
-  .head{background:var(--navy); color:#fff; border-radius:12px; padding:26px 30px; display:flex;
-    justify-content:space-between; align-items:flex-start; gap:20px; box-shadow:var(--sh)}
-  .head .l .pre{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#9fc2dd; margin-bottom:8px}
-  .head h1{font-size:26px; font-weight:bold; letter-spacing:-0.3px}
-  .head .seg{font-size:13px; color:#c6d8e6; margin-top:4px}
-  .head .r{text-align:right; flex-shrink:0}
-  .score{font-size:38px; font-weight:bold; line-height:1}
-  .score small{font-size:13px; font-weight:normal; color:#9fc2dd; display:block; margin-top:4px}
-
-  /* SEMAFORO STRIP */
-  .strip{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:18px 0 0}
-  .pill{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px;
-    display:flex; align-items:center; gap:12px; box-shadow:var(--sh)}
-  .pill .dot{width:14px; height:14px; border-radius:50%; flex-shrink:0}
-  .pill .n{font-size:22px; font-weight:bold}
-  .pill .t{font-size:11px; color:var(--soft); text-transform:uppercase; letter-spacing:.5px}
-  @media(max-width:640px){.strip{grid-template-columns:repeat(2,1fr)}}
-
-  /* SECTIONS */
-  h2{font-size:15px; color:var(--navy); text-transform:uppercase; letter-spacing:1.2px;
-    margin:34px 0 4px; padding-bottom:8px; border-bottom:2px solid var(--navy); display:flex; align-items:center; gap:10px}
-  h2 .num{background:var(--navy); color:#fff; font-size:11px; width:22px; height:22px; border-radius:50%;
-    display:inline-flex; align-items:center; justify-content:center; flex-shrink:0}
-  .secnote{font-size:12.5px; color:var(--soft); margin-bottom:14px}
-
-  /* INSIGHTS */
-  .insights{display:flex; flex-direction:column; gap:10px; margin-top:12px}
-  .ins{background:var(--card); border:1px solid var(--line); border-left:5px solid var(--c); border-radius:10px;
-    padding:14px 18px; box-shadow:var(--sh)}
-  .ins .tag{font-size:10.5px; font-weight:bold; letter-spacing:1px; text-transform:uppercase; color:var(--c); margin-bottom:4px}
-  .ins p{font-size:13.5px}
-  .ins p b{color:var(--navy)}
-
-  /* TABLE */
-  table{width:100%; border-collapse:collapse; background:var(--card); border-radius:10px; overflow:hidden;
-    box-shadow:var(--sh); margin-top:12px; font-size:12.5px}
-  th{background:var(--navy); color:#fff; text-align:left; padding:10px 12px; font-size:11px;
-    letter-spacing:.5px; text-transform:uppercase; font-weight:bold}
-  td{padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ink)}
-  tr:last-child td{border-bottom:none}
-  td .src{display:block; font-size:11px; color:var(--faint); margin-top:2px}
-  .sem{display:inline-flex; align-items:center; gap:6px; font-weight:bold; font-size:11.5px;
-    padding:3px 10px; border-radius:20px; white-space:nowrap}
-  .sem i{width:8px; height:8px; border-radius:50%; display:inline-block}
-  .s-v{background:var(--verde-bg); color:var(--verde)} .s-v i{background:var(--verde)}
-  .s-a{background:var(--amarillo-bg); color:var(--amarillo)} .s-a i{background:var(--amarillo)}
-  .dec{color:var(--blue); font-weight:bold}
-
-  /* ACTIONS */
-  .acts{display:flex; flex-direction:column; gap:10px; margin-top:12px}
-  .act{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 18px;
-    display:grid; grid-template-columns:auto 1fr auto; gap:14px; align-items:center; box-shadow:var(--sh)}
-  .act .pr{width:26px; height:26px; border-radius:50%; background:var(--amarillo-bg); color:var(--amarillo);
-    font-weight:bold; font-size:13px; display:flex; align-items:center; justify-content:center; flex-shrink:0}
-  .act .what{font-size:13.5px}
-  .act .what b{color:var(--navy)}
-  .act .who{font-size:11.5px; color:var(--soft); text-align:right; white-space:nowrap}
-  @media(max-width:600px){.act{grid-template-columns:auto 1fr} .act .who{grid-column:2; text-align:left}}
-
-  /* FOOTER */
-  .foot{margin-top:36px; padding-top:16px; border-top:1px solid var(--line); display:flex;
-    justify-content:space-between; font-size:11px; color:var(--faint); flex-wrap:wrap; gap:8px}
-  .legend{display:flex; gap:14px; flex-wrap:wrap}
-  .legend span{display:inline-flex; align-items:center; gap:6px}
-  .legend i{width:9px; height:9px; border-radius:50%; display:inline-block}
-</style>
-</head>
-<body>
-<div class="page">
-
-  <!-- HEADER -->
-  <div class="head">
-    <div class="l">
-      <div class="pre">Salud del Servicio · Well Construction · Categoría OFS E-30</div>
-      <h1>Coiled Tubing</h1>
-      <div class="seg">Segmento: CTU 2 3/8" &nbsp;·&nbsp; Responsable de seguimiento: Diego Guiñazu &nbsp;·&nbsp; Corte: Junio 2026</div>
-    </div>
-    <div class="r">
-      <div class="score">67%<small>decidible (4 de 6 ítems en verde)</small></div>
-    </div>
+  <div class="view" id="overview">
+   <div class="hero"><div class="pre">Mapa de Salud · Junio 2026</div><h1>9 servicios críticos de Well Construction</h1>
+     <div class="stats">
+       <div><div class="nq">9</div><div class="lb">Servicios</div></div>
+       <div><div class="nq">58%</div><div class="lb">Decidibilidad prom.</div></div>
+       <div><div class="nq" style="color:#8fe0b0">32</div><div class="lb">Verde</div></div>
+       <div><div class="nq" style="color:#f0cf86">20</div><div class="lb">Amarillo</div></div>
+       <div><div class="nq" style="color:#f0a79c">4</div><div class="lb">Rojo</div></div>
+     </div></div>
+   <h2 class="sec">Panorama por servicio</h2>
+   <div class="ranking"><button class="rk" onclick="show('svc-cementacion')">
+      <div class="rk-name">Cementación<span class="rk-cat">OFS E-20 · Aislación</span></div>
+      <div class="rk-bar"><span style="width:100.0%;background:var(--verde)"></span><span style="width:0.0%;background:var(--amarillo)"></span><span style="width:0.0%;background:var(--rojo)"></span></div>
+      <div class="rk-score" style="color:var(--verde)">100%</div></button><button class="rk" onclick="show('svc-rigs')">
+      <div class="rk-name">Rigs<span class="rk-cat">RIG · High-Spec</span></div>
+      <div class="rk-bar"><span style="width:100.0%;background:var(--verde)"></span><span style="width:0.0%;background:var(--amarillo)"></span><span style="width:0.0%;background:var(--rojo)"></span></div>
+      <div class="rk-score" style="color:var(--verde)">100%</div></button><button class="rk" onclick="show('svc-coiled-tubing')">
+      <div class="rk-name">Coiled Tubing<span class="rk-cat">OFS E-30 · CTU 2 3/8&quot;</span></div>
+      <div class="rk-bar"><span style="width:66.7%;background:var(--verde)"></span><span style="width:33.3%;background:var(--amarillo)"></span><span style="width:0.0%;background:var(--rojo)"></span></div>
+      <div class="rk-score" style="color:var(--amarillo)">67%</div></button><button class="rk" onclick="show('svc-snubbing')">
+      <div class="rk-name">Snubbing<span class="rk-cat">OFS E-30 · AESA</span></div>
+      <div class="rk-bar"><span style="width:66.7%;background:var(--verde)"></span><span style="width:33.3%;background:var(--amarillo)"></span><span style="width:0.0%;background:var(--rojo)"></span></div>
+      <div class="rk-score" style="color:var(--amarillo)">67%</div></button><button class="rk" onclick="show('svc-fractura')">
+      <div class="rk-name">Fractura<span class="rk-cat">Frac Bundle · Bundle</span></div>
+      <div class="rk-bar"><span style="width:50.0%;background:var(--verde)"></span><span style="width:50.0%;background:var(--amarillo)"></span><span style="width:0.0%;background:var(--rojo)"></span></div>
+      <div class="rk-score" style="color:var(--amarillo)">50%</div></button><button class="rk" onclick="show('svc-fluidos')">
+      <div class="rk-name">Fluidos<span class="rk-cat">OFS E-20 · —</span></div>
+      <div class="rk-bar"><span style="width:50.0%;background:var(--verde)"></span><span style="width:50.0%;background:var(--amarillo)"></span><span style="width:0.0%;background:var(--rojo)"></span></div>
+      <div class="rk-score" style="color:var(--amarillo)">50%</div></button><button class="rk" onclick="show('svc-stack')">
+      <div class="rk-name">Stack<span class="rk-cat">OFS E-30 · Pre-Frac-Post</span></div>
+      <div class="rk-bar"><span style="width:33.3%;background:var(--verde)"></span><span style="width:66.7%;background:var(--amarillo)"></span><span style="width:0.0%;background:var(--rojo)"></span></div>
+      <div class="rk-score" style="color:var(--rojo)">33%</div></button><button class="rk" onclick="show('svc-direccional')">
+      <div class="rk-name">Direccional<span class="rk-cat">OFS E-20 · Aislación</span></div>
+      <div class="rk-bar"><span style="width:28.6%;background:var(--verde)"></span><span style="width:71.4%;background:var(--amarillo)"></span><span style="width:0.0%;background:var(--rojo)"></span></div>
+      <div class="rk-score" style="color:var(--rojo)">29%</div></button><button class="rk" onclick="show('svc-wireline')">
+      <div class="rk-name">Wireline<span class="rk-cat">OFS E-30 · OpenHole / CasedHole</span></div>
+      <div class="rk-bar"><span style="width:28.6%;background:var(--verde)"></span><span style="width:14.3%;background:var(--amarillo)"></span><span style="width:57.1%;background:var(--rojo)"></span></div>
+      <div class="rk-score" style="color:var(--rojo)">29%</div></button></div>
+   <h2 class="sec">Lectura ejecutiva</h2>
+   <div class="insights">
+     <div class="ins" style="--c:var(--verde)"><div class="tag">Listos para TCO</div><p><b>Cementación y Rigs</b> al 100%, <b>Coiled Tubing y Snubbing</b> al 67%. El núcleo interno —contrato, performance, costo y share— está sano en casi todos: hay base para arrancar el TCO ya, con Cementación o Rigs como piloto.</p></div>
+     <div class="ins" style="--c:var(--amarillo)"><div class="tag">El patrón de la brecha</div><p>Lo que más arrastra a amarillo es la <b>mirada de mercado</b>. La fuente ya está en el <b>Tablero de Planificación</b>; donde el dato está cargado (Snubbing, Rigs, Cementación) el servicio se pone verde. La brecha es de <b>completitud, no de fuente</b>.</p></div>
+     <div class="ins" style="--c:var(--rojo)"><div class="tag">Alerta — Wireline</div><p><b>Wireline</b> es el único con rojos: performance y mercado <b>inexistentes</b>, costo parcial y sin lead time. No hay base para su TCO; requiere relevamiento urgente.</p></div>
+   </div>
+   <h2 class="sec">A revisar antes de presentar</h2>
+   <div class="flag"><b>Dos inconsistencias entre "Estado" y "Semáforo":</b> en <b>Cementación</b>, Concentración y Oferta/Demanda están en verde con estado "Parcial". En <b>Rigs</b>, Cobertura Contractual está en verde con estado "No relevado". Conviene alinear color y estado.</div>
+   <div class="foot"><div class="legend"><span><i style="background:var(--verde)"></i>Verde: decidible</span><span><i style="background:var(--amarillo)"></i>Amarillo: con reservas</span><span><i style="background:var(--rojo)"></i>Rojo: no decidible</span><span><i style="background:var(--gris)"></i>Gris: no relevado</span></div>Fuente: Plantilla de Relevamiento de Salud WC · Mismo formato por servicio</div>
   </div>
 
-  <!-- SEMAFORO STRIP -->
-  <div class="strip">
-    <div class="pill"><span class="dot" style="background:var(--verde)"></span><div><div class="n">4</div><div class="t">Verde</div></div></div>
-    <div class="pill"><span class="dot" style="background:var(--amarillo)"></span><div><div class="n">2</div><div class="t">Amarillo</div></div></div>
-    <div class="pill"><span class="dot" style="background:var(--rojo)"></span><div><div class="n">0</div><div class="t">Rojo</div></div></div>
-    <div class="pill"><span class="dot" style="background:var(--gris)"></span><div><div class="n">0</div><div class="t">Gris</div></div></div>
+  
+  <div class="view" id="svc-coiled-tubing" style="display:none">
+    <div class="fhead"><div><div class="fpre">OFS E-30 · CTU 2 3/8&quot;</div><h2>Coiled Tubing</h2><div class="fresp">Responsable: Diego Guiñazu</div></div><div class="fscore" style="color:var(--amarillo)">67%<small>decidible · 4 de 6</small></div></div>
+    <div class="mstrip"><span class="mp"><i style="background:var(--verde)"></i>4 Verde</span><span class="mp"><i style="background:var(--amarillo)"></i>2 Amarillo</span><span class="mp"><i style="background:var(--rojo)"></i>0 Rojo</span></div>
+    <p class="lectura">Núcleo interno (contrato, performance, share, costo) en verde: el TCO se puede construir ya. La brecha está solo en la mirada de mercado, hoy parcial en el Tablero de Planificación.</p>
+    <table><tr><th style="width:23%">Información</th><th style="width:29%">Decisión que habilita</th><th style="width:22%">Dueño · Fuente</th><th style="width:13%">Estado</th><th style="width:13%">Semáforo</th></tr><tr><td><b>Cobertura Contractual</b></td><td class="dec">Ampliaciones de contrato</td><td>Compras / Contratos<span class="src">SAP Hana / BI Contratos</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Performance Y-Well</b></td><td class="dec">Construcción de TCO</td><td>Operaciones<span class="src">Y-Well</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Market Share</b></td><td class="dec">Asignación a proveedor con mejor TCO</td><td>Operaciones<span class="src">Programador</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Costo Ticket Tipo</b></td><td class="dec">Crear TCO</td><td>Compras / Contratos<span class="src">TER y WO</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Concentración de Mercado de proveedores</b></td><td class="dec">Romper oligopolio o adjudicar más contratos</td><td>Planif. Estratégica / Category Mgr<span class="src">Tablero Planificación</span></td><td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td></tr><tr><td><b>Oferta y Demanda del Servicio</b></td><td class="dec">Necesidad de contratación de nuevos equipos</td><td>Planif. Estratégica / Category Mgr<span class="src">Tablero Planificación</span></td><td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td></tr></table>
+    <div class="obs"><span class="obs-k">Observaciones</span>Demanda de Coiled Tubing subió a 4 CTU (vs. 3 planificados). Geopatagonia no cumple el requisito de longitud de YPF para los próximos pozos (asume tubería de 5.000). Menos oferta calificada + más demanda = riesgo de concentración y tarifa.</div>
+    <div class="pnav"><button class="pn" onclick="show('overview')">← Panorama</button><button class="pn" onclick="show('svc-stack')">Stack →</button></div>
+  </div>
+  <div class="view" id="svc-stack" style="display:none">
+    <div class="fhead"><div><div class="fpre">OFS E-30 · Pre-Frac-Post</div><h2>Stack</h2><div class="fresp">Responsable: Sabrina Benvenuto</div></div><div class="fscore" style="color:var(--rojo)">33%<small>decidible · 2 de 6</small></div></div>
+    <div class="mstrip"><span class="mp"><i style="background:var(--verde)"></i>2 Verde</span><span class="mp"><i style="background:var(--amarillo)"></i>4 Amarillo</span><span class="mp"><i style="background:var(--rojo)"></i>0 Rojo</span></div>
+    <p class="lectura">Contrato y costo firmes, pero performance, share y mercado están parciales. El TCO se puede empezar, condicionado a cerrar performance y share.</p>
+    <table><tr><th style="width:23%">Información</th><th style="width:29%">Decisión que habilita</th><th style="width:22%">Dueño · Fuente</th><th style="width:13%">Estado</th><th style="width:13%">Semáforo</th></tr><tr><td><b>Cobertura Contractual</b></td><td class="dec">Ampliaciones de contrato</td><td>Compras / Contratos<span class="src">SAP Hana / BI Contratos</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Performance Y-Well</b></td><td class="dec">Elegir al proveedor con mejor performance</td><td>Operaciones<span class="src">Tablero Y-Well</span></td><td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td></tr><tr><td><b>Costo Ticket Tipo</b></td><td class="dec">Crear TCO</td><td>Compras / Contratos<span class="src">SmartCost</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Market Share</b></td><td class="dec">Asignación a proveedor con mejor TCO</td><td>Operaciones<span class="src">Programador</span></td><td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td></tr><tr><td><b>Concentración de Mercado de proveedores</b></td><td class="dec">Romper oligopolio o adjudicar más contratos</td><td>Planif. Estratégica / Category Mgr<span class="src">Tablero Planificación</span></td><td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td></tr><tr><td><b>Oferta y Demanda del Servicio</b></td><td class="dec">Necesidad de contratación de nuevos equipos</td><td>Planif. Estratégica / Category Mgr<span class="src">Tablero Planificación</span></td><td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td></tr></table>
+    
+    <div class="pnav"><button class="pn" onclick="show('svc-coiled-tubing')">← Coiled Tubing</button><button class="pn" onclick="show('svc-snubbing')">Snubbing →</button></div>
+  </div>
+  <div class="view" id="svc-snubbing" style="display:none">
+    <div class="fhead"><div><div class="fpre">OFS E-30 · AESA</div><h2>Snubbing</h2><div class="fresp">Responsable: Sabrina Benvenuto</div></div><div class="fscore" style="color:var(--amarillo)">67%<small>decidible · 4 de 6</small></div></div>
+    <div class="mstrip"><span class="mp"><i style="background:var(--verde)"></i>4 Verde</span><span class="mp"><i style="background:var(--amarillo)"></i>2 Amarillo</span><span class="mp"><i style="background:var(--rojo)"></i>0 Rojo</span></div>
+    <p class="lectura">Buen estado general: contrato, share y la mirada de mercado completos. Faltan performance y costo (parciales) para habilitar el TCO pleno.</p>
+    <table><tr><th style="width:23%">Información</th><th style="width:29%">Decisión que habilita</th><th style="width:22%">Dueño · Fuente</th><th style="width:13%">Estado</th><th style="width:13%">Semáforo</th></tr><tr><td><b>Cobertura Contractual</b></td><td class="dec">Ampliaciones de contrato</td><td>Compras / Contratos<span class="src">SAP Hana / BI Contratos</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Performance Y-Well</b></td><td class="dec">Elegir al proveedor con mejor performance</td><td>Operaciones<span class="src">Tablero Y-Well</span></td><td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td></tr><tr><td><b>Costo Ticket Tipo</b></td><td class="dec">Crear TCO</td><td>Compras / Contratos<span class="src">SmartCost</span></td><td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td></tr><tr><td><b>Market Share</b></td><td class="dec">Asignación a proveedor con mejor TCO</td><td>Operaciones<span class="src">Programador</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Oferta y Demanda del Servicio</b></td><td class="dec">Necesidad de contratación de nuevos equipos</td><td>Planif. Estratégica / Category Mgr<span class="src">Tablero Planificación</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Concentración de Mercado de proveedores</b></td><td class="dec">Romper oligopolio o adjudicar más contratos</td><td>Planif. Estratégica / Category Mgr<span class="src">Tablero Planificación</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr></table>
+    
+    <div class="pnav"><button class="pn" onclick="show('svc-stack')">← Stack</button><button class="pn" onclick="show('svc-direccional')">Direccional →</button></div>
+  </div>
+  <div class="view" id="svc-direccional" style="display:none">
+    <div class="fhead"><div><div class="fpre">OFS E-20 · Aislación</div><h2>Direccional</h2><div class="fresp">Responsable: Hernán Ambrosio (varios)</div></div><div class="fscore" style="color:var(--rojo)">29%<small>decidible · 2 de 7</small></div></div>
+    <div class="mstrip"><span class="mp"><i style="background:var(--verde)"></i>2 Verde</span><span class="mp"><i style="background:var(--amarillo)"></i>5 Amarillo</span><span class="mp"><i style="background:var(--rojo)"></i>0 Rojo</span></div>
+    <p class="lectura">El más fragmentado: solo contrato y costo firmes. Performance, share, captura de valor y mercado en parcial, con muchos dueños distintos. Prioridad de consolidación.</p>
+    <table><tr><th style="width:23%">Información</th><th style="width:29%">Decisión que habilita</th><th style="width:22%">Dueño · Fuente</th><th style="width:13%">Estado</th><th style="width:13%">Semáforo</th></tr><tr><td><b>Captura de Valor</b></td><td class="dec">Corroborar el ahorro real informado en la licitación</td><td>Hernán Ambrosio<span class="src">—</span></td><td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td></tr><tr><td><b>Cobertura Contractual</b></td><td class="dec">Ampliaciones de contrato</td><td>Compras / Contratos<span class="src">SAP Hana / BI Contratos</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Performance Y-Well</b></td><td class="dec">Construcción de TCO</td><td>Operaciones<span class="src">Y-Well</span></td><td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td></tr><tr><td><b>Market Share Asignado</b></td><td class="dec">Asignación a proveedor con mejor TCO</td><td>Operaciones<span class="src">Programador</span></td><td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td></tr><tr><td><b>Costo Ticket Tipo</b></td><td class="dec">Crear TCO</td><td>Compras / Contratos<span class="src">TER y WO</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Concentración de Mercado de proveedores</b></td><td class="dec">Romper oligopolio o adjudicar más contratos</td><td>Planif. Estratégica / Category Mgr<span class="src">Tablero Planificación</span></td><td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td></tr><tr><td><b>Oferta y Demanda del Servicio</b></td><td class="dec">Necesidad de contratación de nuevos equipos</td><td>Planif. Estratégica / Category Mgr<span class="src">Tablero Planificación</span></td><td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td></tr></table>
+    <div class="obs"><span class="obs-k">Observaciones</span>Costo Ticket Tipo: KPI de contrato = TPS.</div>
+    <div class="pnav"><button class="pn" onclick="show('svc-snubbing')">← Snubbing</button><button class="pn" onclick="show('svc-fractura')">Fractura →</button></div>
+  </div>
+  <div class="view" id="svc-fractura" style="display:none">
+    <div class="fhead"><div><div class="fpre">Frac Bundle · Bundle</div><h2>Fractura</h2><div class="fresp">Responsable: Marta</div></div><div class="fscore" style="color:var(--amarillo)">50%<small>decidible · 3 de 6</small></div></div>
+    <div class="mstrip"><span class="mp"><i style="background:var(--verde)"></i>3 Verde</span><span class="mp"><i style="background:var(--amarillo)"></i>3 Amarillo</span><span class="mp"><i style="background:var(--rojo)"></i>0 Rojo</span></div>
+    <p class="lectura">Contrato, share y costo (ticket por etapa) en verde. Pendientes performance y mercado. Hay movimiento de oferta en curso.</p>
+    <table><tr><th style="width:23%">Información</th><th style="width:29%">Decisión que habilita</th><th style="width:22%">Dueño · Fuente</th><th style="width:13%">Estado</th><th style="width:13%">Semáforo</th></tr><tr><td><b>Cobertura Contractual</b></td><td class="dec">Ampliaciones de contrato</td><td>Compras / Contratos<span class="src">SAP Hana / BI Contratos</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Performance Y-Well</b></td><td class="dec">Construcción de TCO</td><td>Operaciones<span class="src">Y-Well</span></td><td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td></tr><tr><td><b>Market Share</b></td><td class="dec">Asignación a proveedor con mejor TCO</td><td>Operaciones<span class="src">Programador</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Costo Ticket Tipo</b></td><td class="dec">Crear TCO (ticket tipo por etapa)</td><td>Compras / Contratos<span class="src">PER y WO</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Concentración de Mercado de proveedores</b></td><td class="dec">Romper oligopolio o adjudicar más contratos</td><td>Planif. Estratégica / Category Mgr<span class="src">Tablero Planificación</span></td><td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td></tr><tr><td><b>Oferta y Demanda del Servicio</b></td><td class="dec">Necesidad de contratación de nuevos equipos</td><td>Planif. Estratégica / Category Mgr<span class="src">Tablero Planificación</span></td><td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td></tr></table>
+    <div class="obs"><span class="obs-k">Observaciones</span>Halliburton (1 equipo) en camino para reemplazar al equipo de YPF — cambia la estructura de oferta del bundle.</div>
+    <div class="pnav"><button class="pn" onclick="show('svc-direccional')">← Direccional</button><button class="pn" onclick="show('svc-cementacion')">Cementación →</button></div>
+  </div>
+  <div class="view" id="svc-cementacion" style="display:none">
+    <div class="fhead"><div><div class="fpre">OFS E-20 · Aislación</div><h2>Cementación</h2><div class="fresp">Responsable: Mati Martínez (mercado)</div></div><div class="fscore" style="color:var(--verde)">100%<small>decidible · 6 de 6</small></div></div>
+    <div class="mstrip"><span class="mp"><i style="background:var(--verde)"></i>6 Verde</span><span class="mp"><i style="background:var(--amarillo)"></i>0 Amarillo</span><span class="mp"><i style="background:var(--rojo)"></i>0 Rojo</span></div>
+    <p class="lectura">Servicio modelo: todos los insumos en verde. Candidato directo a piloto de TCO.</p>
+    <table><tr><th style="width:23%">Información</th><th style="width:29%">Decisión que habilita</th><th style="width:22%">Dueño · Fuente</th><th style="width:13%">Estado</th><th style="width:13%">Semáforo</th></tr><tr><td><b>Cobertura Contractual</b></td><td class="dec">Ampliaciones de contrato</td><td>Compras / Contratos<span class="src">SAP Hana / BI Contratos</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Performance Y-Well</b></td><td class="dec">Construcción de TCO</td><td>Operaciones<span class="src">Y-Well</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Market Share</b></td><td class="dec">Asignación a proveedor con mejor TCO</td><td>Operaciones<span class="src">Programador</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Costo Ticket Tipo</b></td><td class="dec">Crear TCO</td><td>Compras / Contratos<span class="src">TER y WO</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Concentración de Mercado de proveedores</b></td><td class="dec">Romper oligopolio o adjudicar más contratos</td><td>Planif. Estratégica / Category Mgr<span class="src">Tablero Planificación</span></td><td>Parcial</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Oferta y Demanda del Servicio</b></td><td class="dec">Necesidad de contratación de nuevos equipos</td><td>Planif. Estratégica / Category Mgr<span class="src">Tablero Planificación</span></td><td>Parcial</td><td><span class="sem s-v"><i></i>Verde</span></td></tr></table>
+    
+    <div class="pnav"><button class="pn" onclick="show('svc-fractura')">← Fractura</button><button class="pn" onclick="show('svc-fluidos')">Fluidos →</button></div>
+  </div>
+  <div class="view" id="svc-fluidos" style="display:none">
+    <div class="fhead"><div><div class="fpre">OFS E-20 · —</div><h2>Fluidos</h2><div class="fresp">Responsable: Mati Martínez (mercado)</div></div><div class="fscore" style="color:var(--amarillo)">50%<small>decidible · 3 de 6</small></div></div>
+    <div class="mstrip"><span class="mp"><i style="background:var(--verde)"></i>3 Verde</span><span class="mp"><i style="background:var(--amarillo)"></i>3 Amarillo</span><span class="mp"><i style="background:var(--rojo)"></i>0 Rojo</span></div>
+    <p class="lectura">Núcleo de costo y share sano. Performance trabada por desalineación comprador/Y-Well sobre el bonus; mercado parcial. Resolver el criterio de bonus desbloquea el TCO.</p>
+    <table><tr><th style="width:23%">Información</th><th style="width:29%">Decisión que habilita</th><th style="width:22%">Dueño · Fuente</th><th style="width:13%">Estado</th><th style="width:13%">Semáforo</th></tr><tr><td><b>Cobertura Contractual</b></td><td class="dec">Ampliaciones de contrato</td><td>Compras / Contratos<span class="src">SAP Hana / BI Contratos</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Performance Y-Well</b></td><td class="dec">Construcción de TCO</td><td>Operaciones<span class="src">Y-Well</span></td><td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td></tr><tr><td><b>Market Share</b></td><td class="dec">Asignación a proveedor con mejor TCO</td><td>Operaciones<span class="src">Programador</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Costo Ticket Tipo</b></td><td class="dec">Crear TCO</td><td>Compras / Contratos<span class="src">TER y WO</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Concentración de Mercado de proveedores</b></td><td class="dec">Romper oligopolio o adjudicar más contratos</td><td>Planif. Estratégica / Category Mgr<span class="src">Tablero Planificación</span></td><td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td></tr><tr><td><b>Oferta y Demanda del Servicio</b></td><td class="dec">Necesidad de contratación de nuevos equipos</td><td>Planif. Estratégica / Category Mgr<span class="src">Tablero Planificación</span></td><td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td></tr></table>
+    <div class="obs"><span class="obs-k">Observaciones</span>Performance: no alineados — el comprador quiere el ticket sin bonus, Y-Well lo quiere con bonus. Definir el criterio destraba el TCO.</div>
+    <div class="pnav"><button class="pn" onclick="show('svc-cementacion')">← Cementación</button><button class="pn" onclick="show('svc-rigs')">Rigs →</button></div>
+  </div>
+  <div class="view" id="svc-rigs" style="display:none">
+    <div class="fhead"><div><div class="fpre">RIG · High-Spec</div><h2>Rigs</h2><div class="fresp">Responsable: Alexis · Mati Martínez</div></div><div class="fscore" style="color:var(--verde)">100%<small>decidible · 6 de 6</small></div></div>
+    <div class="mstrip"><span class="mp"><i style="background:var(--verde)"></i>6 Verde</span><span class="mp"><i style="background:var(--amarillo)"></i>0 Amarillo</span><span class="mp"><i style="background:var(--rojo)"></i>0 Rojo</span></div>
+    <p class="lectura">Todos los insumos en verde, incluida la mirada de mercado completa. Listo para TCO.</p>
+    <table><tr><th style="width:23%">Información</th><th style="width:29%">Decisión que habilita</th><th style="width:22%">Dueño · Fuente</th><th style="width:13%">Estado</th><th style="width:13%">Semáforo</th></tr><tr><td><b>Cobertura Contractual</b></td><td class="dec">Ampliaciones de contrato</td><td>Compras / Contratos<span class="src">SAP Hana / BI Contratos</span></td><td>No relevado</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Performance Y-Well</b></td><td class="dec">Construcción de TCO</td><td>Operaciones<span class="src">Y-Well (Performance Upstream)</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Market Share</b></td><td class="dec">Asignación a proveedor con mejor TCO</td><td>Operaciones<span class="src">Programador</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Costo Ticket Tipo</b></td><td class="dec">Crear TCO</td><td>Compras / Contratos<span class="src">TER y WO</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Concentración de Mercado de proveedores</b></td><td class="dec">Romper oligopolio o adjudicar más contratos</td><td>Planif. Estratégica / Category Mgr<span class="src">Tablero Planificación</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Oferta y Demanda del Servicio</b></td><td class="dec">Necesidad de contratación de nuevos equipos</td><td>Planif. Estratégica / Category Mgr<span class="src">Tablero Planificación</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr></table>
+    
+    <div class="pnav"><button class="pn" onclick="show('svc-fluidos')">← Fluidos</button><button class="pn" onclick="show('svc-wireline')">Wireline →</button></div>
+  </div>
+  <div class="view" id="svc-wireline" style="display:none">
+    <div class="fhead"><div><div class="fpre">OFS E-30 · OpenHole / CasedHole</div><h2>Wireline</h2><div class="fresp">Responsable: —</div></div><div class="fscore" style="color:var(--rojo)">29%<small>decidible · 2 de 7</small></div></div>
+    <div class="mstrip"><span class="mp"><i style="background:var(--verde)"></i>2 Verde</span><span class="mp"><i style="background:var(--amarillo)"></i>1 Amarillo</span><span class="mp"><i style="background:var(--rojo)"></i>4 Rojo</span></div>
+    <p class="lectura">El servicio menos decidible: performance y mercado inexistentes, costo parcial y sin lead time de contratación. No hay base para TCO; requiere relevamiento urgente.</p>
+    <table><tr><th style="width:23%">Información</th><th style="width:29%">Decisión que habilita</th><th style="width:22%">Dueño · Fuente</th><th style="width:13%">Estado</th><th style="width:13%">Semáforo</th></tr><tr><td><b>Cobertura Contractual</b></td><td class="dec">Ampliaciones de contrato</td><td>Compras / Contratos<span class="src">SAP Hana / BI Contratos</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Performance Y-Well</b></td><td class="dec">Construcción de TCO</td><td>Operaciones<span class="src">Y-Well</span></td><td>Inexistente</td><td><span class="sem s-r"><i></i>Rojo</span></td></tr><tr><td><b>Market Share</b></td><td class="dec">Asignación a proveedor con mejor TCO</td><td>Operaciones<span class="src">Programador</span></td><td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td></tr><tr><td><b>Costo Ticket Tipo</b></td><td class="dec">Crear TCO</td><td>Compras / Contratos<span class="src">TER y WO</span></td><td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td></tr><tr><td><b>Concentración de Mercado de proveedores</b></td><td class="dec">Romper oligopolio o adjudicar más contratos</td><td>Planif. Estratégica / Category Mgr<span class="src">Tablero Planificación</span></td><td>Inexistente</td><td><span class="sem s-r"><i></i>Rojo</span></td></tr><tr><td><b>Oferta y Demanda del Servicio</b></td><td class="dec">Necesidad de contratación de nuevos equipos</td><td>Planif. Estratégica / Category Mgr<span class="src">Tablero Planificación</span></td><td>Inexistente</td><td><span class="sem s-r"><i></i>Rojo</span></td></tr><tr><td><b>Lead Time de Contratación</b></td><td class="dec">Anticipar cuándo iniciar la contratación / re-licitación para que el servicio esté disponible cuando Operaciones lo necesita</td><td>—<span class="src">—</span></td><td>Inexistente</td><td><span class="sem s-r"><i></i>Rojo</span></td></tr></table>
+    <div class="obs"><span class="obs-k">Observaciones</span>Costo: existe ticket tipo en algunos casos, no en todos. Lead Time: hoy se usa el estándar de licitación por falta de datos.</div>
+    <div class="pnav"><button class="pn" onclick="show('svc-rigs')">← Rigs</button><button class="pn" onclick="show('overview')">Panorama →</button></div>
   </div>
 
-  <!-- 1. LECTURA EJECUTIVA -->
-  <h2><span class="num">1</span>Lectura ejecutiva</h2>
-  <div class="secnote">Qué dice la Salud de este servicio, en tres ideas.</div>
-  <div class="insights">
-    <div class="ins" style="--c:var(--verde)">
-      <div class="tag">Listo para avanzar</div>
-      <p>El núcleo interno está sano: <b>contrato, performance, share y costo ticket tipo</b> disponibles, con dueño y fuente identificados. <b>El TCO de Coiled Tubing se puede construir ya</b>, sin esperar nuevos relevamientos.</p>
-    </div>
-    <div class="ins" style="--c:var(--amarillo)">
-      <div class="tag">Brecha — visión de mercado</div>
-      <p>Los dos amarillos son los mismos: <b>concentración de proveedores y oferta/demanda</b>. La fuente ya está identificada e institucionalizada (<b>Tablero de Planificación</b>), pero el dato sigue <b>parcial</b>: la brecha ya no es de fuente, es de <b>completitud</b>.</p>
-    </div>
-    <div class="ins" style="--c:var(--rojo)">
-      <div class="tag">Alerta de mercado</div>
-      <p>La demanda sube a <b>4 CTU (vs. 3 planificados)</b> mientras <b>Geopatagonia no cumple los requisitos de longitud de YPF</b> para los próximos pozos (asume tubería de 5.000). Menos oferta calificada + más demanda = <b>riesgo de concentración y de tarifa</b> en el próximo ciclo de contratación.</p>
-    </div>
-  </div>
-
-  <!-- 2. DETALLE DEL RELEVAMIENTO -->
-  <h2><span class="num">2</span>Detalle del relevamiento</h2>
-  <div class="secnote">Los 6 ítems relevados. Cada dato existe porque habilita una decisión.</div>
-  <table>
-    <tr><th style="width:24%">Información</th><th style="width:30%">Decisión que habilita</th><th style="width:22%">Dueño · Fuente</th><th style="width:12%">Estado</th><th style="width:12%">Semáforo</th></tr>
-    <tr>
-      <td><b>Cobertura contractual</b><span class="src">Tipo: Contrato · Frecuencia: Diaria</span></td>
-      <td class="dec">Ampliaciones de contrato</td>
-      <td>Compras / Contratos<span class="src">SAP Hana · BI Contratos</span></td>
-      <td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td>
-    </tr>
-    <tr>
-      <td><b>Performance Y-Well</b><span class="src">Tipo: KPI</span></td>
-      <td class="dec">Construcción de TCO</td>
-      <td>Operaciones<span class="src">Y-Well</span></td>
-      <td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td>
-    </tr>
-    <tr>
-      <td><b>Market share</b><span class="src">Tipo: Dato</span></td>
-      <td class="dec">Asignación al proveedor con mejor TCO</td>
-      <td>Operaciones<span class="src">Programador</span></td>
-      <td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td>
-    </tr>
-    <tr>
-      <td><b>Costo ticket tipo</b><span class="src">Tipo: Dato</span></td>
-      <td class="dec">Crear TCO</td>
-      <td>Compras / Contratos<span class="src">TER y WO</span></td>
-      <td>Disponible</td><td><span class="sem s-v"><i></i>Verde</span></td>
-    </tr>
-    <tr>
-      <td><b>Concentración de mercado de proveedores</b><span class="src">Tipo: KPI</span></td>
-      <td class="dec">Romper oligopolio / adjudicar más contratos</td>
-      <td>Planif. Estratégica · Category Manager<span class="src">Tablero Planificación</span></td>
-      <td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td>
-    </tr>
-    <tr>
-      <td><b>Oferta y demanda del servicio</b><span class="src">Tipo: Dato</span></td>
-      <td class="dec">Necesidad de contratación de nuevos equipos</td>
-      <td>Planif. Estratégica · Category Manager<span class="src">Tablero Planificación</span></td>
-      <td>Parcial</td><td><span class="sem s-a"><i></i>Amarillo</span></td>
-    </tr>
-  </table>
-
-  <!-- 3. PROXIMAS ACCIONES -->
-  <h2><span class="num">3</span>Próximas acciones</h2>
-  <div class="secnote">Cada amarillo tiene una acción para pasar a verde. Cada verde, una decisión que ya se puede tomar.</div>
-  <div class="acts">
-    <div class="act">
-      <div class="pr">1</div>
-      <div class="what"><b>Completar el dato de mercado:</b> acordar con Planificación Estratégica qué falta en el Tablero de Planificación (concentración y oferta/demanda) para pasar de Parcial a Disponible, y con qué frecuencia se actualiza.</div>
-      <div class="who">Planif. Estratégica<br>· Category Manager</div>
-    </div>
-    <div class="act">
-      <div class="pr">2</div>
-      <div class="what"><b>Validar la brecha de oferta:</b> confirmar el requisito de longitud frente a Geopatagonia y cuantificar el impacto de pasar de 3 a 4 CTU en la próxima contratación.</div>
-      <div class="who">Category Manager<br>· Operaciones</div>
-    </div>
-    <div class="act">
-      <div class="pr" style="background:var(--verde-bg); color:var(--verde)">✓</div>
-      <div class="what"><b>Iniciar el TCO de Coiled Tubing:</b> los cuatro insumos están en verde (contrato, performance, share, costo). Es el candidato natural a piloto del modelo.</div>
-      <div class="who">Diego Guiñazu</div>
-    </div>
-  </div>
-
-  <!-- FOOT -->
-  <div class="foot">
-    <div class="legend">
-      <span><i style="background:var(--verde)"></i>Verde: decidible</span>
-      <span><i style="background:var(--amarillo)"></i>Amarillo: gestionable con reservas</span>
-      <span><i style="background:var(--rojo)"></i>Rojo: no decidible</span>
-      <span><i style="background:var(--gris)"></i>Gris: no relevado</span>
-    </div>
-    <div>Fuente: Plantilla de Relevamiento de Salud WC · Una ficha por servicio, mismo formato</div>
-  </div>
-
+ </main>
 </div>
-</body>
-</html>
+<script>
+function show(id){
+  document.querySelectorAll('.view').forEach(v=>v.style.display='none');
+  document.getElementById(id).style.display='block';
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.toggle('active', n.dataset.t===id));
+  document.getElementById('nav').classList.remove('open');
+  window.scrollTo(0,0);
+}
+</script>
+</body></html>
