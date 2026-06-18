@@ -64,11 +64,55 @@ td .src{display:block;font-size:10.5px;color:var(--faint);margin-top:2px}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   @page{margin:14mm}
 }
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 24px;box-shadow:var(--sh);margin-bottom:16px}
+.ctitle{font-size:16px;font-weight:bold;color:var(--navy);margin-bottom:3px}
+.csub{font-size:12.5px;color:var(--soft);margin-bottom:18px}
+.donut-wrap{display:flex;align-items:center;gap:34px;flex-wrap:wrap}
+.donut{width:170px;height:170px;border-radius:50%;position:relative;flex-shrink:0}
+.donut-hole{position:absolute;inset:32px;background:var(--card);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.dh-n{font-size:34px;font-weight:bold;color:var(--navy);line-height:1}
+.dh-l{font-size:11px;color:var(--soft);text-transform:uppercase;letter-spacing:.5px}
+.donut-leg{display:flex;flex-direction:column;gap:12px}
+.dl{font-size:13.5px;display:flex;align-items:center;gap:10px}
+.dl .sw{width:14px;height:14px;border-radius:4px}.dl b{font-size:16px}
+.dl .pc{color:var(--faint);font-size:12px}
+.hm{overflow-x:auto}
+.hm-grouphead,.hm-head,.hm-row{display:grid;grid-template-columns:128px repeat(6,1fr);gap:5px;min-width:540px}
+.hm-grouphead{margin-bottom:5px}
+.hm-group{font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:.8px;text-align:center;padding:5px;border-radius:6px;color:#fff}
+.hm-group.nucleo{grid-column:2/6;background:var(--navy2)}
+.hm-group.mercado{grid-column:6/8;background:#7a5a1e}
+.hm-head{margin-bottom:6px}
+.hm-col{font-size:10.5px;color:var(--soft);text-align:center;font-weight:bold;align-self:end;line-height:1.2}
+.hm-row{margin-bottom:5px;align-items:stretch}
+.hm-name{font-size:12px;font-weight:bold;color:var(--ink);display:flex;flex-direction:column;justify-content:center}
+.hm-name span{font-size:10.5px;color:var(--faint);font-weight:normal}
+.hm-cell{height:38px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:bold}
+.hm-empty{background:var(--gris-bg)!important;color:var(--faint)}
+.dbars{display:flex;flex-direction:column;gap:9px}
+.db-row{display:grid;grid-template-columns:96px 1fr;gap:12px;align-items:center}
+.db-lab{font-size:12.5px;font-weight:bold;text-align:right;color:var(--ink)}
+.db-bar{display:flex;height:26px;border-radius:6px;overflow:hidden;background:var(--gris-bg)}
+.db-bar span{display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:bold;min-width:18px}
+.dbcap{margin-top:14px;font-size:12.5px;color:var(--soft);border-top:1px dashed var(--line);padding-top:12px}
+.dbcap b{color:var(--navy)}
+.rb-bands{position:relative;height:14px;margin-left:140px;margin-bottom:2px}
+.rb-bands .bnd{position:absolute;font-size:10px;color:var(--faint);transform:translateX(-50%)}
+.rbars{display:flex;flex-direction:column;gap:8px}
+.rb-row{display:grid;grid-template-columns:128px 1fr 44px;gap:12px;align-items:center}
+.rb-lab{font-size:12.5px;font-weight:bold;text-align:right}
+.rb-track{height:22px;background:var(--gris-bg);border-radius:6px;overflow:hidden;position:relative}
+.rb-track::before,.rb-track::after{content:"";position:absolute;top:0;bottom:0;width:1px;background:#c4d2de}
+.rb-track::before{left:50%}.rb-track::after{left:80%}
+.rb-fill{height:100%;border-radius:6px}
+.rb-val{font-size:14px;font-weight:bold;text-align:right}
+@media print{.card{break-inside:avoid}}
 </style></head><body>
 <div class="shell">
  <aside class="side"><div class="brand">Well Construction · Supply Chain<b>Salud de Servicios</b></div>
    <button class="mtog" onclick="document.getElementById('nav').classList.toggle('open')">☰ Menú de servicios</button>
-   <nav class="nav" id="nav"><button class="nav-item active" data-t="overview" onclick="show('overview')"><span class="nv-dot" style="background:#9fc2dd"></span>Panorama</button><button class="nav-item" data-t="svc-coiled-tubing" onclick="show('svc-coiled-tubing')"><span class="nv-dot" style="background:var(--amarillo)"></span>Coiled Tubing<span class="nv-sc" style="color:var(--amarillo)">67%</span></button><button class="nav-item" data-t="svc-stack" onclick="show('svc-stack')"><span class="nv-dot" style="background:var(--rojo)"></span>Stack<span class="nv-sc" style="color:var(--rojo)">33%</span></button><button class="nav-item" data-t="svc-snubbing" onclick="show('svc-snubbing')"><span class="nv-dot" style="background:var(--amarillo)"></span>Snubbing<span class="nv-sc" style="color:var(--amarillo)">67%</span></button><button class="nav-item" data-t="svc-direccional" onclick="show('svc-direccional')"><span class="nv-dot" style="background:var(--rojo)"></span>Direccional<span class="nv-sc" style="color:var(--rojo)">29%</span></button><button class="nav-item" data-t="svc-fractura" onclick="show('svc-fractura')"><span class="nv-dot" style="background:var(--amarillo)"></span>Fractura<span class="nv-sc" style="color:var(--amarillo)">50%</span></button><button class="nav-item" data-t="svc-cementacion" onclick="show('svc-cementacion')"><span class="nv-dot" style="background:var(--verde)"></span>Cementación<span class="nv-sc" style="color:var(--verde)">100%</span></button><button class="nav-item" data-t="svc-fluidos" onclick="show('svc-fluidos')"><span class="nv-dot" style="background:var(--amarillo)"></span>Fluidos<span class="nv-sc" style="color:var(--amarillo)">50%</span></button><button class="nav-item" data-t="svc-rigs" onclick="show('svc-rigs')"><span class="nv-dot" style="background:var(--verde)"></span>Rigs<span class="nv-sc" style="color:var(--verde)">100%</span></button><button class="nav-item" data-t="svc-wireline" onclick="show('svc-wireline')"><span class="nv-dot" style="background:var(--rojo)"></span>Wireline<span class="nv-sc" style="color:var(--rojo)">29%</span></button></nav></aside>
+   <nav class="nav" id="nav"><button class="nav-item active" data-t="overview" onclick="show('overview')"><span class="nv-dot" style="background:#9fc2dd"></span>Panorama</button><button class="nav-item" data-t="charts" onclick="show('charts')"><span class="nv-dot" style="background:#2e6da4"></span>Gráficos</button><button class="nav-item" data-t="svc-coiled-tubing" onclick="show('svc-coiled-tubing')"><span class="nv-dot" style="background:var(--amarillo)"></span>Coiled Tubing<span class="nv-sc" style="color:var(--amarillo)">67%</span></button><button class="nav-item" data-t="svc-stack" onclick="show('svc-stack')"><span class="nv-dot" style="background:var(--rojo)"></span>Stack<span class="nv-sc" style="color:var(--rojo)">33%</span></button><button class="nav-item" data-t="svc-snubbing" onclick="show('svc-snubbing')"><span class="nv-dot" style="background:var(--amarillo)"></span>Snubbing<span class="nv-sc" style="color:var(--amarillo)">67%</span></button><button class="nav-item" data-t="svc-direccional" onclick="show('svc-direccional')"><span class="nv-dot" style="background:var(--rojo)"></span>Direccional<span class="nv-sc" style="color:var(--rojo)">29%</span></button><button class="nav-item" data-t="svc-fractura" onclick="show('svc-fractura')"><span class="nv-dot" style="background:var(--amarillo)"></span>Fractura<span class="nv-sc" style="color:var(--amarillo)">50%</span></button><button class="nav-item" data-t="svc-cementacion" onclick="show('svc-cementacion')"><span class="nv-dot" style="background:var(--verde)"></span>Cementación<span class="nv-sc" style="color:var(--verde)">100%</span></button><button class="nav-item" data-t="svc-fluidos" onclick="show('svc-fluidos')"><span class="nv-dot" style="background:var(--amarillo)"></span>Fluidos<span class="nv-sc" style="color:var(--amarillo)">50%</span></button><button class="nav-item" data-t="svc-rigs" onclick="show('svc-rigs')"><span class="nv-dot" style="background:var(--verde)"></span>Rigs<span class="nv-sc" style="color:var(--verde)">100%</span></button><button class="nav-item" data-t="svc-wireline" onclick="show('svc-wireline')"><span class="nv-dot" style="background:var(--rojo)"></span>Wireline<span class="nv-sc" style="color:var(--rojo)">29%</span></button></nav></aside>
  <main class="main">
   <div class="view" id="overview">
    <div class="hero"><div class="pre">Mapa de Salud · Junio 2026</div><h1>9 servicios críticos de Well Construction</h1>
@@ -83,6 +127,51 @@ td .src{display:block;font-size:10.5px;color:var(--faint);margin-top:2px}
    <h2 class="sec">A revisar antes de presentar</h2>
    <div class="flag"><b>Dos inconsistencias entre "Estado" y "Semáforo":</b> en <b>Cementación</b>, Concentración y Oferta/Demanda están en verde con estado "Parcial". En <b>Rigs</b>, Cobertura Contractual está en verde con estado "No relevado". Conviene alinear color y estado.</div>
    <div class="foot"><div class="legend"><span><i style="background:var(--verde)"></i>Verde: decidible</span><span><i style="background:var(--amarillo)"></i>Amarillo: con reservas</span><span><i style="background:var(--rojo)"></i>Rojo: no decidible</span><span><i style="background:var(--gris)"></i>Gris: no relevado</span></div>Fuente: Plantilla de Relevamiento de Salud WC · Mismo formato por servicio</div>
+  </div>
+
+  <div class="view" id="charts" style="display:none">
+    <div class="hero"><div class="pre">Tablero visual · Junio 2026</div><h1>La Salud de Well Construction en cuatro lecturas</h1></div>
+    <h2 class="sec">Composición y matriz</h2>
+    
+<div class="card">
+  <div class="ctitle">Composición global de la Salud</div>
+  <div class="csub">Los 56 ítems relevados across los 9 servicios.</div>
+  <div class="donut-wrap">
+    <div class="donut" style="background:conic-gradient(#2e8b57 0 57.1%, #c2902b 57.1% 92.9%, #b3402f 92.9% 100%)">
+      <div class="donut-hole"><div class="dh-n">57%</div><div class="dh-l">decidible</div></div>
+    </div>
+    <div class="donut-leg">
+      <div class="dl"><span class="sw" style="background:#2e8b57"></span><b>32</b> Verde · decidible <span class="pc">57%</span></div>
+      <div class="dl"><span class="sw" style="background:#c2902b"></span><b>20</b> Amarillo · con reservas <span class="pc">36%</span></div>
+      <div class="dl"><span class="sw" style="background:#b3402f"></span><b>4</b> Rojo · no decidible <span class="pc">7%</span></div>
+    </div>
+  </div>
+</div>
+    
+<div class="card">
+  <div class="ctitle">Matriz de Salud — servicio × dimensión</div>
+  <div class="csub">Cada celda es el semáforo de un dato. Leé en horizontal la salud de un servicio; en vertical, la de una capacidad en toda la categoría.</div>
+  <div class="hm">
+    <div class="hm-grouphead"><div class="hm-name"></div><div class="hm-group nucleo">Núcleo interno</div><div class="hm-group mercado">Mirada de mercado</div></div>
+    <div class="hm-head"><div class="hm-name"></div><div class="hm-col">Contrato</div><div class="hm-col">Performance</div><div class="hm-col">Costo</div><div class="hm-col">Share</div><div class="hm-col">Concentración</div><div class="hm-col">Oferta/Dem.</div></div>
+    <div class="hm-row"><div class="hm-name">Cementación<span>100%</span></div><div class="hm-cell" style="background:#2e8b57" title="Cementación · Contrato: V">V</div><div class="hm-cell" style="background:#2e8b57" title="Cementación · Performance: V">V</div><div class="hm-cell" style="background:#2e8b57" title="Cementación · Costo: V">V</div><div class="hm-cell" style="background:#2e8b57" title="Cementación · Share: V">V</div><div class="hm-cell" style="background:#2e8b57" title="Cementación · Concentración: V">V</div><div class="hm-cell" style="background:#2e8b57" title="Cementación · Oferta/Dem.: V">V</div></div><div class="hm-row"><div class="hm-name">Rigs<span>100%</span></div><div class="hm-cell" style="background:#2e8b57" title="Rigs · Contrato: V">V</div><div class="hm-cell" style="background:#2e8b57" title="Rigs · Performance: V">V</div><div class="hm-cell" style="background:#2e8b57" title="Rigs · Costo: V">V</div><div class="hm-cell" style="background:#2e8b57" title="Rigs · Share: V">V</div><div class="hm-cell" style="background:#2e8b57" title="Rigs · Concentración: V">V</div><div class="hm-cell" style="background:#2e8b57" title="Rigs · Oferta/Dem.: V">V</div></div><div class="hm-row"><div class="hm-name">Coiled Tubing<span>67%</span></div><div class="hm-cell" style="background:#2e8b57" title="Coiled Tubing · Contrato: V">V</div><div class="hm-cell" style="background:#2e8b57" title="Coiled Tubing · Performance: V">V</div><div class="hm-cell" style="background:#2e8b57" title="Coiled Tubing · Costo: V">V</div><div class="hm-cell" style="background:#2e8b57" title="Coiled Tubing · Share: V">V</div><div class="hm-cell" style="background:#c2902b" title="Coiled Tubing · Concentración: A">A</div><div class="hm-cell" style="background:#c2902b" title="Coiled Tubing · Oferta/Dem.: A">A</div></div><div class="hm-row"><div class="hm-name">Snubbing<span>67%</span></div><div class="hm-cell" style="background:#2e8b57" title="Snubbing · Contrato: V">V</div><div class="hm-cell" style="background:#c2902b" title="Snubbing · Performance: A">A</div><div class="hm-cell" style="background:#c2902b" title="Snubbing · Costo: A">A</div><div class="hm-cell" style="background:#2e8b57" title="Snubbing · Share: V">V</div><div class="hm-cell" style="background:#2e8b57" title="Snubbing · Concentración: V">V</div><div class="hm-cell" style="background:#2e8b57" title="Snubbing · Oferta/Dem.: V">V</div></div><div class="hm-row"><div class="hm-name">Fractura<span>50%</span></div><div class="hm-cell" style="background:#2e8b57" title="Fractura · Contrato: V">V</div><div class="hm-cell" style="background:#c2902b" title="Fractura · Performance: A">A</div><div class="hm-cell" style="background:#2e8b57" title="Fractura · Costo: V">V</div><div class="hm-cell" style="background:#2e8b57" title="Fractura · Share: V">V</div><div class="hm-cell" style="background:#c2902b" title="Fractura · Concentración: A">A</div><div class="hm-cell" style="background:#c2902b" title="Fractura · Oferta/Dem.: A">A</div></div><div class="hm-row"><div class="hm-name">Fluidos<span>50%</span></div><div class="hm-cell" style="background:#2e8b57" title="Fluidos · Contrato: V">V</div><div class="hm-cell" style="background:#c2902b" title="Fluidos · Performance: A">A</div><div class="hm-cell" style="background:#2e8b57" title="Fluidos · Costo: V">V</div><div class="hm-cell" style="background:#2e8b57" title="Fluidos · Share: V">V</div><div class="hm-cell" style="background:#c2902b" title="Fluidos · Concentración: A">A</div><div class="hm-cell" style="background:#c2902b" title="Fluidos · Oferta/Dem.: A">A</div></div><div class="hm-row"><div class="hm-name">Stack<span>33%</span></div><div class="hm-cell" style="background:#2e8b57" title="Stack · Contrato: V">V</div><div class="hm-cell" style="background:#c2902b" title="Stack · Performance: A">A</div><div class="hm-cell" style="background:#2e8b57" title="Stack · Costo: V">V</div><div class="hm-cell" style="background:#c2902b" title="Stack · Share: A">A</div><div class="hm-cell" style="background:#c2902b" title="Stack · Concentración: A">A</div><div class="hm-cell" style="background:#c2902b" title="Stack · Oferta/Dem.: A">A</div></div><div class="hm-row"><div class="hm-name">Direccional<span>29%</span></div><div class="hm-cell" style="background:#2e8b57" title="Direccional · Contrato: V">V</div><div class="hm-cell" style="background:#c2902b" title="Direccional · Performance: A">A</div><div class="hm-cell" style="background:#2e8b57" title="Direccional · Costo: V">V</div><div class="hm-cell" style="background:#c2902b" title="Direccional · Share: A">A</div><div class="hm-cell" style="background:#c2902b" title="Direccional · Concentración: A">A</div><div class="hm-cell" style="background:#c2902b" title="Direccional · Oferta/Dem.: A">A</div></div><div class="hm-row"><div class="hm-name">Wireline<span>29%</span></div><div class="hm-cell" style="background:#2e8b57" title="Wireline · Contrato: V">V</div><div class="hm-cell" style="background:#b3402f" title="Wireline · Performance: R">R</div><div class="hm-cell" style="background:#c2902b" title="Wireline · Costo: A">A</div><div class="hm-cell" style="background:#2e8b57" title="Wireline · Share: V">V</div><div class="hm-cell" style="background:#b3402f" title="Wireline · Concentración: R">R</div><div class="hm-cell" style="background:#b3402f" title="Wireline · Oferta/Dem.: R">R</div></div>
+  </div>
+</div>
+    <h2 class="sec">Diagnóstico de la brecha</h2>
+    
+<div class="card">
+  <div class="ctitle">¿Dónde está la brecha? — por dimensión</div>
+  <div class="csub">Cuántos servicios tienen cada capacidad en verde / amarillo / rojo. Lo que está abajo es el cuello de botella sistémico.</div>
+  <div class="dbars"><div class="db-row"><div class="db-lab">Contrato</div><div class="db-bar"><span style="width:100.0%;background:#2e8b57">9</span></div></div><div class="db-row"><div class="db-lab">Costo</div><div class="db-bar"><span style="width:77.77777777777779%;background:#2e8b57">7</span><span style="width:22.22222222222222%;background:#c2902b">2</span></div></div><div class="db-row"><div class="db-lab">Share</div><div class="db-bar"><span style="width:77.77777777777779%;background:#2e8b57">7</span><span style="width:22.22222222222222%;background:#c2902b">2</span></div></div><div class="db-row"><div class="db-lab">Performance</div><div class="db-bar"><span style="width:33.33333333333333%;background:#2e8b57">3</span><span style="width:55.55555555555556%;background:#c2902b">5</span><span style="width:11.11111111111111%;background:#b3402f">1</span></div></div><div class="db-row"><div class="db-lab">Concentración</div><div class="db-bar"><span style="width:33.33333333333333%;background:#2e8b57">3</span><span style="width:55.55555555555556%;background:#c2902b">5</span><span style="width:11.11111111111111%;background:#b3402f">1</span></div></div><div class="db-row"><div class="db-lab">Oferta/Dem.</div><div class="db-bar"><span style="width:33.33333333333333%;background:#2e8b57">3</span><span style="width:55.55555555555556%;background:#c2902b">5</span><span style="width:11.11111111111111%;background:#b3402f">1</span></div></div></div>
+  <div class="dbcap"><b>Contrato</b> está sano en los 9. <b>Performance</b> y la <b>mirada de mercado</b> (Concentración y Oferta/Demanda) son lo que arrastra a la categoría.</div>
+</div>
+    
+<div class="card">
+  <div class="ctitle">Listón para el TCO — decidibilidad por servicio</div>
+  <div class="csub">% de ítems en verde. Tres bandas: listo (≥80), en proceso (50–79), crítico (&lt;50).</div>
+  <div class="rb-bands"><span class="bnd" style="left:50%">50%</span><span class="bnd" style="left:80%">80%</span></div>
+  <div class="rbars"><div class="rb-row"><div class="rb-lab">Cementación</div><div class="rb-track"><div class="rb-fill" style="width:100%;background:#2e8b57"></div></div><div class="rb-val" style="color:#2e8b57">100%</div></div><div class="rb-row"><div class="rb-lab">Rigs</div><div class="rb-track"><div class="rb-fill" style="width:100%;background:#2e8b57"></div></div><div class="rb-val" style="color:#2e8b57">100%</div></div><div class="rb-row"><div class="rb-lab">Coiled Tubing</div><div class="rb-track"><div class="rb-fill" style="width:67%;background:#c2902b"></div></div><div class="rb-val" style="color:#c2902b">67%</div></div><div class="rb-row"><div class="rb-lab">Snubbing</div><div class="rb-track"><div class="rb-fill" style="width:67%;background:#c2902b"></div></div><div class="rb-val" style="color:#c2902b">67%</div></div><div class="rb-row"><div class="rb-lab">Fractura</div><div class="rb-track"><div class="rb-fill" style="width:50%;background:#c2902b"></div></div><div class="rb-val" style="color:#c2902b">50%</div></div><div class="rb-row"><div class="rb-lab">Fluidos</div><div class="rb-track"><div class="rb-fill" style="width:50%;background:#c2902b"></div></div><div class="rb-val" style="color:#c2902b">50%</div></div><div class="rb-row"><div class="rb-lab">Stack</div><div class="rb-track"><div class="rb-fill" style="width:33%;background:#b3402f"></div></div><div class="rb-val" style="color:#b3402f">33%</div></div><div class="rb-row"><div class="rb-lab">Direccional</div><div class="rb-track"><div class="rb-fill" style="width:29%;background:#b3402f"></div></div><div class="rb-val" style="color:#b3402f">29%</div></div><div class="rb-row"><div class="rb-lab">Wireline</div><div class="rb-track"><div class="rb-fill" style="width:29%;background:#b3402f"></div></div><div class="rb-val" style="color:#b3402f">29%</div></div></div>
+</div>
   </div>
   
   <div class="view" id="svc-coiled-tubing" style="display:none">
